@@ -1,0 +1,114 @@
+{% extends 'header.html' %}
+
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+  
+
+  <body>
+
+   
+   
+
+    <!-- Page Content -->
+    <div class="page-heading header-text">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1>Blog</h1>
+            <span>Read our blogs!!!</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="single-services">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <section class='tabs-content'>
+              <article id='tabs-1'>
+                <img src="assets/images/blog-image-1-940x460.jpg" alt="">
+                <h4><a href="/accounts/blog_detail">You have probably wondered if Rentcars is a legit car rental company, right? Then we’ll tell you!</a></h4>
+                <div style="margin-bottom:10px;">
+                  <span>John Doe &nbsp;|&nbsp; 27.07.2020 10:10 &nbsp;|&nbsp; 15 comments</span>
+                </div>
+                <p>Rentcars is one of the largest car rental platforms in the world and one of the global leaders in the segment. You can compare prices and car rental options among hundreds of car rental companies worldwide.</p>
+                <br>
+                <div>
+                  <a href="/blog_detail" class="filled-button">Continue Reading</a>
+                </div>
+              </article>
+
+              <br>
+              <br>
+              <br>
+
+              <article id='tabs-2'>
+                <img src="assets/images/blog-image-2-940x460.jpg" alt="">
+                <h4><a href="/accounts/blog_detail">5 tips to rent a car at Rentcars:</a></h4>
+                <div style="margin-bottom:10px;">
+                  <span>John Doe &nbsp;|&nbsp; 27.07.2020 10:10 &nbsp;|&nbsp; 15 comments</span>
+                </div>
+                <p>1)Always book your car in advance;
+                  <br>
+                  2)Schedule your pick up time and don’t be late;
+                  <br>
+                </p>
+                <br>
+                <div>
+                  <a href="/blog_detail" class="filled-button">Continue Reading</a>
+                </div>
+              </article>
+            </section>
+          </div>
+
+          <div class="col-md-4">
+              <h4 class="h4">Search</h4>
+              
+              <form id="search_form" name="gs" method="GET" action="#">
+                <input type="text" name="q" class="form-control form-control-lg" placeholder="type to search..." autocomplete="on">
+              </form>
+
+              <br>
+              <br>
+
+              <h4 class="h4">Recent posts</h4>
+
+              <ul>
+                  <li>
+                      <h5 style="margin-bottom:10px;"><a href="/blog_detail">Dolorum corporis ullam, reiciendis inventore est repudiandae</a></h5>
+                      <small><i class="fa fa-user"></i> John Doe &nbsp;|&nbsp; <i class="fa fa-calendar"></i> 27.07.2020 10:10</small>
+                  </li>
+
+                  <li><br></li>
+
+                  <li>
+                      <h5 style="margin-bottom:10px;"><a href="/blog_detail">Culpa ab quasi in rerum dolorum impedit expedita</a></h5>
+                      <small><i class="fa fa-user"></i> John Doe &nbsp;|&nbsp; <i class="fa fa-calendar"></i> 27.07.2020 10:10</small>
+                  </li>
+
+                  <li><br></li>
+
+                  <li>
+                    <h5 style="margin-bottom:10px;"><a href="/blog_detail">Explicabo soluta corrupti dolor doloribus optio dolorum</a></h5>
+
+                    <small><i class="fa fa-user"></i> John Doe &nbsp;|&nbsp; <i class="fa fa-calendar"></i> 27.07.2020 10:10</small>
+                  </li>
+              </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>  
+    <br>  
+    <br>  
+    <br>  
+
+  </body>
+  {% endblock %}
+</html>

@@ -1,0 +1,242 @@
+
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+    <style>
+    .register{
+      background: -webkit-linear-gradient(left, #fff, #fff);
+      margin-top: 3%;
+      padding: 3%;
+  }
+  .register-left{
+      text-align: center;
+      color: #fff;
+      margin-top: 4%;
+  }
+  .register-left input{
+      border: none;
+      border-radius: 1.5rem;
+      padding: 2%;
+      width: 60%;
+      background: #fff;
+      font-weight: bold;
+      color: #383d41;
+      margin-top: 30%;
+      margin-bottom: 3%;
+      cursor: pointer;
+  }
+  .register-right{
+      background: #fff;
+      border-top-left-radius: 10% 100%;
+      border-bottom-left-radius: 10% 50%;
+  }
+  .register-left img{
+      margin-top: 15%;
+      margin-bottom: 5%;
+      width: 25%;
+      -webkit-animation: mover 2s infinite  alternate;
+      animation: mover 1s infinite  alternate;
+  }
+  @-webkit-keyframes mover {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-20px); }
+  }
+  @keyframes mover {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-20px); }
+  }
+  .register-left p{
+      font-weight: lighter;
+      padding: 2%;
+      margin-top: -9%;
+  }
+  .register .register-form{
+      padding: 10%;
+      margin-top: 10%;
+  }
+  .btnRegister{
+      float: right;
+      margin-top: 10%;
+      border: none;
+      border-radius: 1.5rem;
+      padding: 2%;
+      background: #a4c639;
+      color: rgb(243, 247, 242);
+      font-weight: 600;
+      width: 50%;
+      cursor: pointer;
+  }
+  .register .nav-tabs{
+      margin-top: 3%;
+      border: none;
+      background: #d9e6da;
+      border-radius: 1.5rem;
+      width: 28%;
+      float: right;
+  }
+  .register .nav-tabs .nav-link{
+      padding: 2%;
+      height: 34px;
+      font-weight: 600;
+      color: rgb(38, 205, 38);
+      border-top-right-radius: 1.5rem;
+      border-bottom-right-radius: 1.5rem;
+  }
+  .register .nav-tabs .nav-link:hover{
+      border: none;
+  }
+  .register .nav-tabs .nav-link.active{
+      width: 100px;
+      color: #fff;
+      border: 2px solid #fff;
+      border-top-left-radius: 1.5rem;
+      border-bottom-left-radius: 1.5rem;
+  }
+  .register-heading{
+      text-align: center;
+      margin-top: 8%;
+      margin-bottom: -15%;
+      color: green;
+  }
+  .para_2{
+    float: right;
+  }
+  </style>
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{% static 'css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.css' %}">
+  </head>
+    <!-- Header -->
+    <div class="sub-header">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 col-xs-12">
+              <ul class="left-info">
+                <li><a href="#"><i class="fa fa-envelope"></i>PhantomCars@gmail.com/a></li>
+                <li><a href="#"><i class="fa fa-phone"></i>123-456-7890</a></li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <ul class="right-icons">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <header class="">
+        <nav class="navbar navbar-expand-lg">
+          <div class="container">
+            <a class="navbar-brand" href="index.html"><h2>Phantom cars </h2></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="/">Home
+                    <!-- <span class="sr-only">(current)</span> -->
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/fleet">Fleet</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/offers">Offers</a>
+                </li> 
+                {% if user.is_authenticated %}
+                 
+                  <li class="nav-item">
+                    <a class="nav-link" > Hello, {{user.first_name}}</a>
+                  </li> 
+                  <li class="nav-item">
+                    <a class="nav-link" href="/accounts/logout">Logout</a>
+                  </li> 
+                {% else %}
+                  <li class="nav-item">
+                    <a class="nav-link" href="/accounts/register">Register</a>
+                  </li>
+                {% endif %}
+                <li class="nav-item dropdown">
+                  <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">About</a>
+                
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="/about">About Us</a>
+                      <a class="dropdown-item" href="/blog">Blog</a>
+                      <a class="dropdown-item" href="/team">Team</a>
+                      <a class="dropdown-item" href="/testimonials">Testimonials</a>
+                      <a class="dropdown-item" href="/faq">FAQ</a>
+                      <a class="dropdown-item" href="/terms">Terms</a>
+                      
+                    </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/contact">Contact Us</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+    <body>
+        
+      <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+      <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <!------ Include the above in your HEAD tag ---------->
+
+      <div class="container register">
+                  <div class="row">
+                      
+                      <div class="col-md-12 register-right">
+                          
+                          <div class="tab" id="myTabContent">
+                              <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                  <h3 class="register-heading">Get Yourself Login</h3>
+                                  <div class="row register-form">
+                                      <div class="col-md-8">
+                                        {% for message in messages %}
+                                                <span style="color:red">{{ message }}</span>
+                                                {% endfor %}  
+                                                <form action="login" method="POST">
+                                                  {% csrf_token %}
+                                                  
+                                                  <div class="form-group">
+                                                    <input type="text" class="form-control" placeholder="Username" name="username" required/>
+                                                  </div>                                    
+                                                  <div class="form-group">
+                                                      <input type="password" class="form-control" placeholder="Password" name="psw" required />
+                                                  </div>
+                                                 
+                                                  
+                                                  
+                                                  <input type="submit" class="btnRegister"  value="Log In">
+                                              
+                                              Not have an account? <a href="/accounts/register">Sign Up</a>
+                                          </div>
+                                      </div>
+                                    </form>
+
+                                  
+    </body>
+  {% endblock %}
+</html>            
+

@@ -1,0 +1,382 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+<style>
+  .service-item img {
+    height: 250px !important;
+}
+</style>
+
+    <!-- Page Content -->
+    <!-- Banner Starts Here -->
+    <div class="main-banner header-text" id="top">
+        <div class="Modern-Slider">
+          <!-- Item -->
+          <div class="item item-1">
+            <div class="img-fill">
+                <div class="text-content">
+                  <h6>Phantom cars co-operative consultancy!</h6>
+                  <h4>Phantom Cars is one of the <br>biggest car cosultancy <br>service in India</h4>
+                  <p>For more details click on Contact Us.</p>
+                  <a href="/contact" class="filled-button">contact us</a>
+                </div>
+            </div>
+          </div>
+          <!-- // Item -->
+          <!-- Item -->
+          <div class="item item-2">
+            <div class="img-fill">
+                <div class="text-content">
+                  <h6>Phantom cars co-operative consultancy!</h6>
+                  <h4>We have all types of cars<br>to see all cars</h4>
+                  <p>Click on fleet for more details</p>
+                  <a href="/fleet" class="filled-button">Fleet</a>
+                </div>
+            </div>
+          </div>
+          <!-- // Item -->
+          <!-- Item -->
+          <div class="item item-3">
+            <div class="img-fill">
+                <div class="text-content">
+                  <h6>Phantom cars co-operative consultancy!</h6>
+                  <h4>Manny cars are in offer <br>grab offers fast</h4>
+                  <p>To see offers click on the down button!</p>
+                  <a href="offers.html" class="filled-button">Offers</a>
+                </div>
+            </div>
+          </div>
+          <!-- // Item -->
+        </div>
+    </div>
+    <!-- Banner Ends Here -->
+
+    <div class="request-form">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <h4>Request a call back right now ?</h4>
+            <span>Mauris ut dapibus velit cras interdum nisl ac urna tempor mollis.</span>
+          </div>
+          <div class="col-md-4">
+            <a href="contact.html" class="border-button">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+     
+    <div class="services">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-heading">
+              <h2>Our <em>Cars</em></h2>
+              <span>Phantom cars co-operative consultancy</span>
+            </div>
+          </div>
+            {% for dest in dests %}
+              <div class="col-md-4">
+                <div class="service-item">
+                  <img src="{{dest.img.url}}" alt="">
+                    <div class="down-content">
+                      <h4>{{dest.name}}</h4>
+                        <div style="margin-bottom:10px;">
+                          <span>from <sup>$</sup>{{dest.price}} per weekend</span>
+                          
+                        </div>
+                        <p>{{dest.discription}}</p>
+
+                          <a href="/booknow" data-toggle="modal" data-target="#exampleModal" class="filled-button">Book Now</a>
+                        </div>
+                </div>
+            
+                      <br>
+              </div>
+            {%endfor%}
+          </div>
+        </div>
+      </div>
+    </div>        
+          
+          
+
+    <div class="fun-facts">
+      <div class="container">
+        <div class="more-info-content">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="left-image">
+                <img src="{% static 'images/about-1-570x350.jpg' %}" class="img-fluid" alt="">
+              </div>
+            </div>
+            <div class="col-md-6 align-self-center">
+              <div class="right-content">
+                <span>Who we are</span>
+                <h2>Get to know about <em>our company</em></h2>
+                <p>Phantom Cars is one of the biggest car cosultancy service in India </p>
+                <a href="/about" class="filled-button">Read More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="more-info">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Read our <em>Blog</em></h2>
+          <span>Phantom cars co-operative consultancy</span>
+        </div>
+
+        <div class="row" id="tabs">
+          <div class="col-md-4">
+            <ul>
+              <li><a href='#tabs-1'>It is one of the most trusted consultancy<br> <small>Rutuja Joshi &nbsp;|&nbsp; 12.05.2020 10:10</small></a></li>
+              <li><a href='#tabs-2'>Had Nice experiance<br> <small>Bhavin Panchal &nbsp;|&nbsp; 27.07.2020 09:21</small></a></li>
+              <li><a href='#tabs-3'>Their suggestions have help me alot  <br> <small>Sanket Bhosale &nbsp;|&nbsp; 03.08.2020 05:11</small></a></li>
+            </ul>
+
+            <br>
+
+            <div class="text-center">
+              <a href="/blog_detail" class="filled-button">Read More</a>
+            </div>
+
+            <br>
+          </div>
+
+          <div class="col-md-8">
+            <section class='tabs-content'>
+              <article id='tabs-1'>
+                <img src="{% static 'images/blog-image-1-940x460.jpg' %}" alt="">
+                <h4><a href="{% static'blog-details.html">About Phantom Cars</a></h4>
+                <p>Phantom Cars focuses on luxury cars, performance cars and also on unique limited edition vehicles. The blog contains a range of car reviews as well as products, gadgets, and accessory reviews. The blog also regularly publishes road trips to inspire you to take your next journey in a luxury car.</p>
+              </article>
+              <article id='tabs-2'>
+                <img src="{% static 'images/blog-image-2-940x460.jpg' %}" alt="">
+                <h4><a href="{% static 'blog-details.html' %}">ggMauris lobortis quam id dictum dignissim</a></h4>
+                <p>Sed ut dolor in augue cursus ultrices. Vivamus mauris turpis, auctor vel facilisis in, tincidunt vel diam. Sed vitae scelerisque orci. Nunc non magna orci. Aliquam commodo mauris ante, quis posuere nibh vestibulum sit amet</p>
+              </article>
+              <article id='tabs-3'>
+                <img src="{% static 'images/blog-image-3-940x460.jpg' %}" alt="">
+                <h4><a href="{% static 'blog-details.html' %}">Class aptent taciti sociosqu ad litora torquent per</a></h4>
+                <p>Mauris lobortis quam id dictum dignissim. Donec pellentesque erat dolor, cursus dapibus turpis hendrerit quis. Suspendisse at suscipit arcu. Nulla sed erat lectus. Nulla facilisi. In sit amet neque sapien. Donec scelerisque mi at gravida efficitur. Nunc lacinia a est eu malesuada. Curabitur eleifend elit sapien, sed pulvinar orci luctus eget. 
+                </p>
+              </article>
+            </section>
+          </div>
+        </div>
+
+        
+      </div>
+    </div>
+
+    <div class="testimonials">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-heading">
+              <h2>What they say <em>about us</em></h2>
+              <span>testimonials from our greatest clients</span>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="owl-testimonials owl-carousel">
+              
+              <div class="testimonial-item">
+                <div class="inner-content">
+                  <h4>George Walker</h4>
+                  <span>Chief Financial Analyst</span>
+                  <p>"Phantom Cars is very easiest process..I'm searching car from since 1 month.bt when I see app of Phantom Cars..I'm very surprised bcuz all process is under in one roof..and when I visited office of Phantom Cars all staff is very gentle and polite nature .I'm very grateful to be a part of Phantom Cars..and special thanks to Rishikesh Joshi and Rutuja Joshi for guide and chosen best car ..
+
+                    "</p>
+                </div>
+                <img src="http://placehold.it/60x60" alt="">
+              </div>
+              
+              <div class="testimonial-item">
+                <div class="inner-content">
+                  <h4>John Smith</h4>
+                  <span>Market Specialist</span>
+                  <p>"Phantom Cars is easiest way to purchased car..I suggested all my family member and my colleague to purchased from Phantom Cars  ..all staff of Phantom Cars  Surat branch is very humble and polite nature..and very supportive."</p>
+                </div>
+                <img src="http://placehold.it/60x60" alt="">
+              </div>
+              
+              <div class="testimonial-item">
+                <div class="inner-content">
+                  <h4>David Wood</h4>
+                  <span>Chief Accountant</span>
+                  <p>"Ut ultricies maximus turpis, in sollicitudin ligula posuere vel. Donec finibus maximus neque, vitae egestas quam imperdiet nec. Proin nec mauris eu tortor consectetur tristique."</p>
+                </div>
+                <img src="http://placehold.it/60x60" alt="">
+              </div>
+              
+              <div class="testimonial-item">
+                <div class="inner-content">
+                  <h4>Andrew Boom</h4>
+                  <span>Marketing Head</span>
+                  <p>"Curabitur sollicitudin, tortor at suscipit volutpat, nisi arcu aliquet dui, vitae semper sem turpis quis libero. Quisque vulputate lacinia nisl ac lobortis."</p>
+                </div>
+                <img src="http://placehold.it/60x60" alt="">
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callback-form">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-heading">
+              <h2>Request a <em>call back</em></h2>
+              <span>Phantom cars co-operative consultancy</span>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="contact-form">
+              <form id="contact" action="" method="post">
+                <div class="row">
+                  <div class="col-lg-4 col-md-12 col-sm-12">
+                    <fieldset>
+                      <input name="name" type="text" class="form-control" id="name" placeholder="Full Name" required="">
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-4 col-md-12 col-sm-12">
+                    <fieldset>
+                      <input name="email" type="text" class="form-control" id="email" pattern="[^ @]*@[^ @]*" placeholder="E-Mail Address" required="">
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-4 col-md-12 col-sm-12">
+                    <fieldset>
+                      <input name="subject" type="text" class="form-control" id="subject" placeholder="Subject" required="">
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-12">
+                    <fieldset>
+                      <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your Message" required=""></textarea>
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-12">
+                    <fieldset>
+                      <button type="submit" id="form-submit" class="border-button">Send Message</button>
+                    </fieldset>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+     <!-- Modal -->
+     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top: 70px;">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Book Now</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+              <form action="#" id="contact">
+                  <div class="row">
+                   <div class="col-md-6">
+                    <div class="form-group">
+                      <fieldset>
+                        <input type="text" class="form-control" placeholder="Pick-up location" required="">
+                      </fieldset>
+                    </div>
+                   </div>
+
+                   <div class="col-md-6">
+                    <div class="form-group">
+                      <fieldset>
+                        <input type="text" class="form-control" placeholder="Return location" required="">
+                      </fieldset>
+                    </div>
+                   </div>
+                  </div>
+
+                  <div class="row">
+                   <div class="col-md-6">
+                    <div class="form-group">
+                      <fieldset>
+                        <input type="text" class="form-control" placeholder="Pick-up date/time" required="">
+                      </fieldset>
+                    </div>
+                   </div>
+
+                   <div class="col-md-6">
+                    <div class="form-group">
+                      <fieldset>
+                        <input type="text" class="form-control" placeholder="Return date/time" required="">
+                      </fieldset>
+                    </div>
+                   </div>
+                  </div>
+
+                  <div class="form-group">
+                    <fieldset>
+                      <input type="text" class="form-control" placeholder="Enter full name" required="">
+                    </fieldset>
+                  </div>
+
+                  <div class="row">
+                   <div class="col-md-6">
+                    <div class="form-group">
+                      <fieldset>
+                        <input type="text" class="form-control" placeholder="Enter email address" required="">
+                      </fieldset>
+                    </div>
+                   </div>
+
+                   <div class="col-md-6">
+                    <div class="form-group">
+                      <fieldset>
+                        <input type="text" class="form-control" placeholder="Enter phone" required="">
+                      </fieldset>
+                    </div>
+                   </div>
+                  </div>
+              </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary">Book Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Additional Scripts -->
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/owl.js"></script>
+    <script src="assets/js/slick.js"></script>
+    <script src="assets/js/accordions.js"></script>
+
+    <script language = "text/Javascript"> 
+      cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+      function clearField(t){                   //declaring the array outside of the
+      if(! cleared[t.id]){                      // function makes it static and global
+          cleared[t.id] = 1;  // you could use true and false, but that's more typing
+          t.value='';         // with more chance of typos
+          t.style.color='#fff';
+          }
+      }
+    </script>
+
+
+
+  {% endblock %}
+  
